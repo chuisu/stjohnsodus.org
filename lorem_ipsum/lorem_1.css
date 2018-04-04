@@ -1,0 +1,62 @@
+html {}
+body {
+	font-family: Georgia;
+	background-color: #e4f3f3;
+}
+#container {
+	margin: -22px -8px 0 -8px;
+	/* padding: 0 22px 0 22px; */
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav {
+	text-align: center;
+}
+
+
+nav ul li {
+	margin: 0 1% 0 1%;
+	display: inline;
+}
+.grid-container {
+	height: 100%;
+	display: grid;
+	grid-template-areas:
+		'about about about about about about'
+		'announcements announcements calendar calendar calendar calendar'
+		'blog blog blog listsignup listsignup listsignup';
+	grid-gap: 6vh;
+	padding: 0 6vh 0 6vh;
+}
+	
+.grid-container div {
+	height: 100%;
+	padding: 0 6vh 0 6vh; 
+	background-color: #c9e7e6;
+}
+
+.about {
+	margin: 0 20% 0 20%;
+	grid-area: about;
+	text-align: center;
+}
+.announcements {
+	grid-area: announcements;
+}
+.calendar {
+	grid-area: calendar;
+}
+.blog {
+	grid-area: blog;
+}
+.listsignup {
+	grid-area: listsignup;
+}
