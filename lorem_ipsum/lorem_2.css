@@ -1,0 +1,110 @@
+ @import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,400|Playfair+Display:400,700');
+
+html {}
+
+body {
+	/* background-color: #e4f3f3; */
+}
+
+p, li, h5 {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+h1, h3 {
+	font-family: 'Playfair Display', serif;
+	font-weight: thin;
+}
+
+h3 {
+	font-size: 3vh;
+}
+
+h5 {
+	font-weight: thin;
+	font-size: 2vh;
+}
+
+#container {
+	margin: -2vh -0.42vw -2vh -0.42vw;
+	/* padding: 0 22px 0 22px; */
+	background-image: url('static/site-background.jpeg');
+	background-size: cover;
+}
+
+#content-container {
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#splash {
+	height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin: 0;	
+}
+
+h1#site-title {
+	display: inline-block;
+	font-size: 12vh;
+	letter-spacing: .2vw;
+	font-weight: bold;
+	color: white;
+}
+
+nav {
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	margin: 0 1% 0 1%;
+	display: inline;
+}
+.grid-container {
+	height: 100%;
+	display: grid;
+	grid-template-areas:
+		'about about about about'
+		'sidebar announcements calendar calendar'
+		'sidebar blog blog listsignup';
+	grid-gap: 6vh;
+	padding: 6vh 6vw 0 6vw;
+}
+	
+.grid-container div {
+	padding: 0 6vh 0 6vh;
+	margin: 0 3vh 0 3vh;
+	background-color: rgba(232, 235, 239, 0.5);
+}
+
+div.about {
+	margin: 0 20vh 0 20vh;
+	text-align: center;
+	line-height: 5vh;
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+.about {
+	grid-area: about;
+}
+
+.announcements {
+	grid-area: announcements;
+}
+.calendar {
+	grid-area: calendar;
+}
+.blog {
+	grid-area: blog;
+}
+.listsignup {
+	grid-area: listsignup;
+}
