@@ -1,0 +1,15 @@
+4/5/2018
+First sample is all done, but second sample is coming along as well. Here are my ideas:
+  first of all, I need to remember to draw them on paper first, or come up with pseudocode or written description
+  still would like white slanted lines with static position toward the bottom, working together with a slanted white-transparent gradient to transition the background image to white (or off-white)
+  still would like better background images (semi-opaque parallelograms) for each grid item
+  second sample could float sidebar left
+  could play with #content-container being a flexbox
+  would be nice to have a pretty vertical line separating the sidebar and the content
+  figure out an icon indicating to scroll
+  need an image behind #splash
+  can possibly get rid of grid-gap if keeping as a grid
+  
+  third sample would have a persistent navbar at the top
+    figure out animating relative to scroll position
+  
