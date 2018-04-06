@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,400|Playfair+Display:400,700');
+ @import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
 
 html {}
 
@@ -7,21 +7,23 @@ body {
 }
 
 p, li, h5 {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Muli', sans-serif;
+	line-height: 4vh;
+	font-size: 14pt;
 }
 
 h1, h3 {
 	font-family: 'Playfair Display', serif;
-	font-weight: thin;
+	font-weight: 400;
 }
 
 h3 {
-	font-size: 3vh;
+	font-size: 20pt;
 }
 
 h5 {
-	font-weight: thin;
-	font-size: 2vh;
+	font-weight: 800;
+	font-size: 14pt;
 }
 
 #container {
@@ -48,8 +50,7 @@ h5 {
 h1#site-title {
 	display: inline-block;
 	font-size: 12vh;
-	letter-spacing: .2vw;
-	font-weight: bold;
+	letter-spacing: .4vw;
 	color: white;
 }
 
@@ -66,11 +67,10 @@ nav ul li {
 	height: 100%;
 	display: grid;
 	grid-template-areas:
-		'about about about about'
-		'sidebar announcements calendar calendar'
-		'sidebar blog blog listsignup';
+		'announcements calendar calendar'
+		'blog blog listsignup';
 	grid-gap: 6vh;
-	padding: 6vh 6vw 0 6vw;
+	padding: 0 6vw 0 6vw;
 }
 	
 .grid-container div {
@@ -80,17 +80,21 @@ nav ul li {
 }
 
 div.about {
-	margin: 0 20vh 0 20vh;
+	margin: 0 0 5vh 0;
+	padding: 1vh 25vw 5vh 25vw;
 	text-align: center;
+	background-color: rgba(232, 235, 239, 0.5);
+}
+
+div.about p {
 	line-height: 5vh;
 }
 
 .sidebar {
-	grid-area: sidebar;
-}
-
-.about {
-	grid-area: about;
+	float: left;
+	height: 100%;
+	padding: 0 2vw 0 2vw;
+	background-color: rgba(232, 235, 239, 0.5);
 }
 
 .announcements {
