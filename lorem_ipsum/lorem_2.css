@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
 
 html {}
 
@@ -6,10 +6,10 @@ body {
 	/* background-color: #e4f3f3; */
 }
 
-p, li, h5 {
+p, li {
 	font-family: 'Muli', sans-serif;
-	line-height: 4vh;
-	font-size: 14pt;
+	line-height: 24px;
+	font-size: 12pt;
 }
 
 h1, h3 {
@@ -22,6 +22,7 @@ h3 {
 }
 
 h5 {
+	font-family: 'Muli', sans-serif;
 	font-weight: 800;
 	font-size: 14pt;
 }
@@ -39,7 +40,7 @@ h5 {
 }
 
 #splash {
-	height: 75vh;
+	height: 60vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -81,18 +82,53 @@ nav ul li {
 
 div.about {
 	margin: 0 0 5vh 0;
-	padding: 1vh 25vw 5vh 25vw;
+	padding: 0.005vh 25vw 0.5vh 25vw;
 	text-align: center;
 	background-color: rgba(232, 235, 239, 0.5);
 }
 
+.arrow {
+	width: 60px;
+	height: 50px;		
+}
+
+.arrow path {
+	stroke: black;
+	fill: transparent;
+	stroke-width: 1px;
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
+}
+
+@-webkit-keyframes arrow {
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; 
+} 
+
 div.about p {
-	line-height: 5vh;
+	font-size: 14pt;
+	line-height: 45px;
+	text-align: center;
 }
 
 .sidebar {
 	float: left;
-	height: 100%;
+	height: 100vh;
+	max-width: 10vw;
 	padding: 0 2vw 0 2vw;
 	background-color: rgba(232, 235, 239, 0.5);
 }

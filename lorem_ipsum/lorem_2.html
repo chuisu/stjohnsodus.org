@@ -17,6 +17,9 @@
       <p>Lorem ipsum dolor sit amet, duo et solet aperiam efficiendi, usu ea sale feugiat. Vel option pertinacia no. Viris adipiscing ex eam. Vix sumo error adipiscing ex, no usu nemore petentium.
 
 Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique albucius, mollis alterum id sit. Populo mediocrem pertinacia te vim. In his elitr dolorem, erat possit efficiantur et sit. Eu sit atqui ornatus molestiae, qui summo nostro dolorem ea, posse possim vel cu.</p>
+      <svg class="arrow">
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      </svg>
     </div>
     <div class="sidebar">
       <h3>get connected</h3>
@@ -27,6 +30,11 @@ Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique al
         <li>SERMONS</li>
         <li>CONTACT</li>
       </ul>
+      <hr/>
+      <h5>directions</h5>
+      <p>Donec vel urna arcu. Aenean commodo elit eget justo lacinia, aliqua    m venenatis diam iaculis. Duis consequat ante vel augue fringilla, quis condimentum erat ultricies.</p>
+      <hr/>
+      <p>Duis quis nisi sem. In hac habitasse platea dictumst. Ut sit amet arcu nec dolor congue laoreet. Ali    quam eget faucibus nisl. Duis lobortis fermentum blandit. Maecenas sed convallis eros, non dignissim     sapien. Mauris ex ipsum, egestas at iaculis quis, feugiat non erat. Etiam ante elit, facilisis ut h    endrerit quis, vestibulum eget nisl. Nam eu leo ut nibh vestibulum eleifend. Aliquam vestibulum elit     ac ex blandit faucibus. </p>
     </div>
     <div class="grid-container">
       <div class="announcements">
@@ -81,5 +89,16 @@ Duis quis nisi sem. In hac habitasse platea dictumst. Ut sit amet arcu nec dolor
     <footer></footer>
    </div>
 </div>
+<script>
+
+document.getElementById("container").addEventListener("scroll", hideArrow);
+
+function hideArrow() {
+	alert("tried to hide arrow");
+	var arrow = document.getElementsByClassName("arrow");
+	arrow[0].style.display = "none";
+}
+
+</script>
 </body>
 </html>

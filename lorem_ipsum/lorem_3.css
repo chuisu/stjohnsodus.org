@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
+
+html {}
+
+body {
+	/* background-color: #e4f3f3; */
+	line-height: 40px;
+}
+
+p, li, h5 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 12pt;
+}
+
+h1, h3 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 20pt;
+}
+
+h5 {
+	font-weight: 800;
+	font-size: 14pt;
+}
+
+#navbar-list {
+	width: 100vw;
+	top: 0.05vh;
+	margin: 0;
+	text-align: center;
+	position: fixed;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+#navbar-list li {
+	display: inline;
+	padding: 0 2vw 0 2vw;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000000;
+    margin: 0 20vw 0 20vw;
+    padding: 0;
+}
+
+#container {
+	margin: -2vh -0.42vw -2vh -0.42vw;
+	/* padding: 0 22px 0 22px; */
+	background-image: url('static/site-background.jpeg');
+	background-size: cover;
+}
+
+#content-container {
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#splash {
+	height: 33vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#site-title {
+	display: inline-block;
+	font-size: 6vh;
+	letter-spacing: .2vw;
+}
+
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.flexbox {
+	display: flex;
+	flex-direction: column;
+}
+	
+.flexbox-content-container {
+	margin: 0 20vw 0 20vw;
+	background-color: rgba(232, 235, 239, 0.5);
+}
+
+.flexbox div {
+	padding: 0 6vw 0 6vw;
+}
+
+.flexbox div h3, .flexbox div h5 {
+	text-align: center;
+}
+
+div.about {
+	text-align: center;
+}

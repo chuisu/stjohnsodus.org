@@ -3,30 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>St. John's Sodus</title>
-    <link href="lorem_1.css" rel="stylesheet" type="text/css">
+    <link href="lorem_3.css" rel="stylesheet" type="text/css">
   </head>
   <body>
    <div id="container">
-<!-- Navbar below header, grid layout for content -->
+   <nav id="navbar">
+     <ul id="navbar-list">
+       <li>BLOG</li>
+       <li>SERMONS</li>
+       <li>CALENDAR</li>
+       <li>CONTACT</li>
+     </ul>
+   <nav>
+<!-- Sidebar on right, single-page scroll idea using flexbox -->
     <div id="splash">
-      <h1 id="site-title">ST JOHN'S SODUS</h1>
+      <h1 id="site-title">ST. JOHN'S SODUS</h1>
     </div>
    <div id="content-container">
-    <nav>
-      <ul>
-        <li>BLOG</li>
-        <li>CALENDAR</li>
-        <li>ANNOUNCEMENTS</li>
-        <li>CONTACT</li>
-      </ul>
-    </nav>
-    <div class="grid-container">
+    <div class="flexbox">
+      <div class="flexbox-content-container">
+      <div id="sidebar">
+      </div>
+      <hr/>
       <div class="about">
         <h3>ABOUT</h3>
         <p>Lorem ipsum dolor sit amet, duo et solet aperiam efficiendi, usu ea sale feugiat. Vel option pertinacia no. Viris adipiscing ex eam. Vix sumo error adipiscing ex, no usu nemore petentium.
 
 Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique albucius, mollis alterum id sit. Populo mediocrem pertinacia te vim. In his elitr dolorem, erat possit efficiantur et sit. Eu sit atqui ornatus molestiae, qui summo nostro dolorem ea, posse possim vel cu.</p>
       </div>
+      <hr/>
       <div class="announcements">
         <h3>ANNOUNCEMENTS</h3>
         <ul>
@@ -46,6 +51,7 @@ Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique al
           </li>
         </ul>
       </div>
+      <hr/>
       <div class="calendar">
         <h3>CALENDAR</h3>
         <ul>
@@ -55,6 +61,7 @@ Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique al
           <li></li>
         </ul>
       </div>
+      <hr/>
       <div class="blog">
         <h3>BLOG</h3>
         <ul>
@@ -72,10 +79,13 @@ Duis quis nisi sem. In hac habitasse platea dictumst. Ut sit amet arcu nec dolor
           </li>
         </ul>
       </div>
+      <hr/>
       <div class="listsignup">
         <h3>EMAIL LIST SIGNUP</h3>
         <p></p>
       </div>
+      </div>
+      <hr/>
     <footer></footer>
    </div>
    </div>

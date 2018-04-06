@@ -1,28 +1,29 @@
- @import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,400|Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
 
 html {}
 
 body {
 	/* background-color: #e4f3f3; */
-	line-height: 4vh;
+	line-height: 40px;
 }
 
 p, li, h5 {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Muli', sans-serif;
+	font-size: 12pt;
 }
 
 h1, h3 {
-	font-family: 'Playfair Display', serif;
-	font-weight: thin;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
 }
 
 h3 {
-	font-size: 3vh;
+	font-size: 20pt;
 }
 
 h5 {
 	font-weight: thin;
-	font-size: 2vh;
+	font-size: 16pt;
 }
 
 #container {
@@ -37,22 +38,24 @@ h5 {
 	background-color: rgba(255, 255, 255, 0.4);
 }
 
-#site-banner {
-	height: 100%;
-	padding: 7.5vh 0 7.5vh 0;
+#splash {
+	height: 15vh;
+	display: flex;
 }
 
-#site-title {
-	text-align: center;
-	font-size: 6vh;
-	letter-spacing: .2vw;
-	font-weight: bold;
-	margin: 0;
+h1#site-title {
+	display: inline-block;
+	margin: auto 0 0 2vw;
+	font-size: 8vh;
+	font-weight: 200;
+	letter-spacing: 0.2vw;
+	color: #666;
 }
 
 nav {
-	text-align: center;
+	text-align: right;
 	margin: 0 0 6.25vh 0;
+	padding: 0.0001vh 0 0 0;
 	background-color: rgba(222, 225, 229, 0.5);
 }
 
