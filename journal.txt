@@ -12,4 +12,20 @@ First sample is all done, but second sample is coming along as well. Here are my
   
   third sample would have a persistent navbar at the top
     figure out animating relative to scroll position
+
+4/9/2018
+Michael selected the first sample, we're going with this design. Here's a workflow for me to get started on:
+1. Design
+  Making sure that the design is suitable and makes for a pleasant viewing/webbrowsing experience. It should work well with the Django implementation in order for it to become a template.
+2. Django backend
+  Requirements center around high modulability: 
+    Modular features required:
+      All featured images (banners, splash, etc)
+        These will have to be fully thought/fleshed out. There will have to be a model with a filefield that has the maximum of ONE record. Templates will have to be able to pick up the URL of this uploaded static file and serve it.
+      All text features (blog, announcements, etc)
+  We also need to know how to Djangoify Michael's calendar setup.
+3. Implementation
+  Template implementation of html
+  PythonAnywhere account setup, venv setup
   
+The only trouble area here are the image models, which will require some reading up.
