@@ -6,12 +6,12 @@ from django.db import models
 class About(models.Model):
     body = models.TextField()
 
-class Events(models.Model):
+class Event(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateTimeField()
     description = models.TextField()
 
-class Announcements(models.Model):
+class Announcement(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateTimeField()
     body = models.TextField()
