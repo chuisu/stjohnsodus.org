@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from main.models import About
 from main.models import Announcement
 from main.models import Event
-from main.models import Background-Image
-from main.models import Splash-Image
+from main.models import BackgroundImage
+from main.models import SplashImage
 from main.models import Blog
 
