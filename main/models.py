@@ -28,7 +28,15 @@ class Blog(models.Model):
     body = models.TextField()
 
 class SplashImage(models.Model):
-    image = models.ImageField(upload_to='static/')
+    image = models.ImageField(upload_to='static/media')
+#    def save(self, *args, **kwargs):
+#        if About.objects.exists() and not self.pk:
+#            raise ValidationError('There can only be one splash image, go back and edit the existing splash image object')
+#        return super(About, self).save(*arggs, **kwargs)
 
 class BackgroundImage(models.Model):
-    image = models.ImageField(upload_to='static/')
+    image = models.ImageField(upload_to='static/media')
+#    def save(self, *args, **kwargs):
+#        if About.objects.exists() and not self.pk:
+#            raise ValidationError('There can only be one background image, go back and edit the existing background image object')
+#        return super(About, self).save(*arggs, **kwargs)

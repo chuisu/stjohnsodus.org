@@ -10,3 +10,7 @@ from main.models import BackgroundImage
 from main.models import SplashImage
 from main.models import Blog
 
+def index(request):
+    #we need all imported things as variables
+    #first, the images:
+    backgroundimage = BackgroundImage.objects.all().last()
