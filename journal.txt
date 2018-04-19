@@ -29,3 +29,7 @@ Michael selected the first sample, we're going with this design. Here's a workfl
   PythonAnywhere account setup, venv setup
   
 The only trouble area here are the image models, which will require some reading up.
+4/18
+Working on django models, have fleshed out a way to make only one instance possible, need to recreate this with images and find a way to serve static images.
+
+Still need a solution for the django calendar.
