@@ -1,5 +1,0 @@
-Collecting Django
-  Using cached https://files.pythonhosted.org/packages/92/56/1f30c1e6a58b0c97c492461148edcbece2c6e43dcc3529695165744349ee/Django-1.11.12-py2.py3-none-any.whl
-Collecting pytz (from Django)
-  Using cached https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl
-Installing collected packages: pytz, Django
