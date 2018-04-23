@@ -14,3 +14,19 @@ def index(request):
     #we need all imported things as variables
     #first, the images:
     backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    #next, the texts
+    about = About.objects.all().last()
+    announcements = Announcement.objects.all()
+    events = Event.objects.all()
+    blog = Blog.objects.all()
+    #render the page
+    return render(request, 'main/index.html',{
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'about': about,
+        'announcements': announcements,
+        'events': events,
+        'blog': blog,
+        })
+    
