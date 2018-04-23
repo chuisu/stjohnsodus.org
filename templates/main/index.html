@@ -8,62 +8,47 @@
    <div id="content-container">
     <nav>
       <ul>
-        <li>BLOG</li>
-        <li>CALENDAR</li>
-        <li>ANNOUNCEMENTS</li>
-        <li>CONTACT</li>
+        <li><a href="{% url 'blog' %}">BLOG</a></li>
+        <li><a href="{% url 'calendar' %}">CALENDAR</a></li>
+        <li><a href="{% url 'announcements' %}">ANNOUNCEMENTS</a></li>
+        <li><a href="{% url 'contact' %}">CONTACT</a></li>
       </ul>
     </nav>
     <div class="grid-container">
       <div class="about">
         <h3>ABOUT</h3>
-        <p>Lorem ipsum dolor sit amet, duo et solet aperiam efficiendi, usu ea sale feugiat. Vel option pertinacia no. Viris adipiscing ex eam. Vix sumo error adipiscing ex, no usu nemore petentium.
-
-Nec modo sententiae temporibus ne, duo eu graece dicunt. Eu vix reque tibique albucius, mollis alterum id sit. Populo mediocrem pertinacia te vim. In his elitr dolorem, erat possit efficiantur et sit. Eu sit atqui ornatus molestiae, qui summo nostro dolorem ea, posse possim vel cu.</p>
+          <p>{{ about.body }}</p>
       </div>
       <div class="announcements">
         <h3>ANNOUNCEMENTS</h3>
         <ul>
+        {% for announcement in announcements %}
           <li>
-            <h5>Consul Vocibus &mdash; 4/1/2018</h5>
-            <p>Consul vocibus salutatus ei vix. No nam libris altera graeco. Commune posidonium an vis, verterem mediocrem forensibus eos eu. Ridens consectetuer in vim, vero error cu vel, eos corpora constituam ex. Ne eum dicat tacimates laboramus.</p>
+             <h5><a href="{% url 'announcementdetail' announcement.id %}">{{ announcement.title }}</a> &mdash; {{ announcement.date }}</h5>
+             <p>{{ announcement.body }}</p>
           </li>
-          <li>
-            <h5>Nunc ut libero dapibus &mdash; 4/2/2018</h5>
-            <p>Nunc ut libero dapibus, sollicitudin libero ac, malesuada mi. Aliquam erat volutpat. Sed ornare velit dignissim purus bibendum vulputate. Pellentesque vulputate, dui eu consequat hendrerit, lorem metus laoreet nulla, sed varius augue lectus placerat tellus. Nulla a lacinia magna. Nulla facilisi. Morbi rutrum est ac risus tincidunt pellentesque. Nam vitae sapien vel nisi semper pharetra sit amet at odio. Duis feugiat, sapien eget placerat posuere, sem velit suscipit erat, id malesuada orci nisl iaculis arcu. Nunc vehicula ipsum dui, at interdum augue convallis sit amet. Vivamus pulvinar faucibus blandit.</p>
-          </li>
-            <h5>Ut vihicula odia quam &mdash; 4/3/2018</h5>
-            <p>Ut vehicula odio quam, ullamcorper imperdiet neque elementum in. Phasellus tincidunt et lectus in vestibulum. Nullam eleifend augue interdum, varius justo quis, semper tortor. Donec id varius nulla, ac eleifend risus. Donec vel urna arcu. Aenean commodo elit eget justo lacinia, aliquam venenatis diam iaculis. Duis consequat ante vel augue fringilla, quis condimentum erat ultricies.</p>
-          </li>
-            <h5>Duis et interdum nisi &mdash; 4/4/2018</h5>
-            <p>Duis et interdum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut ut vehicula libero. Mauris vel sem vel augue dapibus tempus. Integer arcu sem, fringilla id pharetra et, laoreet id nisi. Nulla porttitor laoreet odio a lacinia. Vivamus volutpat dui orci, in lacinia sapien lobortis elementum. Etiam sollicitudin nibh diam, vel maximus mauris aliquam eget.</p>
-          </li>
+        {% endfor %}
         </ul>
       </div>
       <div class="calendar">
         <h3>CALENDAR</h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {% for event in events %}
+          <li>
+             <h5><a href="{% url 'eventdetail' event.id %}">{{ event.title }}</a> &mdash; {{ event.date }}</h5>
+          </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="blog">
         <h3>BLOG</h3>
         <ul>
+          {% for blogentry in blog %}
+          <li>
+             <h5><a href="{% url 'blogdetail' blogentry.id %}">{{ blogentry.title }}</a> &mdash; {{ blogentry.date }}</h5>
+             <p>{{ blogentry.body }}</p>
           </li>
-            <h5>Lorem Ipsum, 4/4/2018</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in neque orci. Praesent sodales nibh sem, id fringilla purus ultrices sit amet. Duis pellentesque convallis eros, eu feugiat quam iaculis a. Pellentesque tincidunt, quam venenatis convallis vulputate, nibh elit sodales leo, mattis rhoncus magna turpis vitae est. Mauris mattis turpis sit amet orci pulvinar luctus. Integer ut dolor tincidunt, auctor enim sit amet, interdum ex. Phasellus sagittis pharetra nibh, eget tincidunt mi mollis id. Quisque porttitor nibh sed scelerisque elementum. Phasellus eu lacus vitae mauris ultrices facilisis. Aenean viverra nisi vitae commodo maximus. Suspendisse auctor vestibulum elementum. Pellentesque malesuada diam sit amet varius vehicula. Nulla gravida vehicula ligula in tempor.
-</br>
-Nunc ut libero dapibus, sollicitudin libero ac, malesuada mi. Aliquam erat volutpat. Sed ornare velit dignissim purus bibendum vulputate. Pellentesque vulputate, dui eu consequat hendrerit, lorem metus laoreet nulla, sed varius augue lectus placerat tellus. Nulla a lacinia magna. Nulla facilisi. Morbi rutrum est ac risus tincidunt pellentesque. Nam vitae sapien vel nisi semper pharetra sit amet at odio. Duis feugiat, sapien eget placerat posuere, sem velit suscipit erat, id malesuada orci nisl iaculis arcu. Nunc vehicula ipsum dui, at interdum augue convallis sit amet. Vivamus pulvinar faucibus blandit.
-</br>
-Ut vehicula odio quam, ullamcorper imperdiet neque elementum in. Phasellus tincidunt et lectus in vestibulum. Nullam eleifend augue interdum, varius justo quis, semper tortor. Donec id varius nulla, ac eleifend risus. Donec vel urna arcu. Aenean commodo elit eget justo lacinia, aliquam venenatis diam iaculis. Duis consequat ante vel augue fringilla, quis condimentum erat ultricies.
-</br>
-Duis et interdum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut ut vehicula libero. Mauris vel sem vel augue dapibus tempus. Integer arcu sem, fringilla id pharetra et, laoreet id nisi. Nulla porttitor laoreet odio a lacinia. Vivamus volutpat dui orci, in lacinia sapien lobortis elementum. Etiam sollicitudin nibh diam, vel maximus mauris aliquam eget.
-</br>
-Duis quis nisi sem. In hac habitasse platea dictumst. Ut sit amet arcu nec dolor congue laoreet. Aliquam eget faucibus nisl. Duis lobortis fermentum blandit. Maecenas sed convallis eros, non dignissim sapien. Mauris ex ipsum, egestas at iaculis quis, feugiat non erat. Etiam ante elit, facilisis ut hendrerit quis, vestibulum eget nisl. Nam eu leo ut nibh vestibulum eleifend. Aliquam vestibulum elit ac ex blandit faucibus. Duis egestas cursus vestibulum. Donec vestibulum magna at metus pulvinar sodales. Curabitur malesuada, urna eu scelerisque vestibulum, ligula ex sodales dolor, vel molestie mi tellus vel dolor. Quisque rhoncus augue sed libero maximus, non suscipit magna efficitur. Nullam facilisis ac massa eu finibus. Nulla facilisi.</p>
-          </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="listsignup">
