@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
+
+html {}
+
+body {
+	/* background-color: #e4f3f3; */
+	line-height: 40px;
+}
+
+p, li, h5 {
+	font-family: 'Muli', sans-serif;
+	font-size: 12pt;
+}
+
+h1, h3 {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 20pt;
+}
+
+h5 {
+	font-weight: thin;
+	font-size: 16pt;
+}
+
+#container {
+	margin: -2vh -0.42vw -2vh -0.42vw;
+	/* padding: 0 22px 0 22px; */
+	background-image: url('site-background.jpeg');
+	background-size: cover;
+}
+
+#content-container {
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#splash {
+	height: 15vh;
+	display: flex;
+}
+
+h1#site-title {
+	display: inline-block;
+	margin: auto 0 0 2vw;
+	font-size: 8vh;
+	font-weight: 200;
+	letter-spacing: 0.2vw;
+	color: #666;
+}
+
+nav {
+	text-align: right;
+	margin: 0 0 6.25vh 0;
+	padding: 0.0001vh 0 0 0;
+	background-color: rgba(222, 225, 229, 0.5);
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	margin: 0 1% 0 1%;
+	display: inline;
+}
+.grid-container {
+	height: 100%;
+	display: grid;
+	grid-template-areas:
+		'about about about about about about'
+		'announcements announcements calendar calendar calendar calendar'
+		'blog blog blog listsignup listsignup listsignup';
+	grid-gap: 6vh;
+	padding: 0 6vw 0 6vw;
+}
+	
+.grid-container div {
+	padding: 0 6vh 0 6vh;
+	margin: 0 3vh 0 3vh;
+	background-color: rgba(232, 235, 239, 0.5);
+}
+
+div.about {
+	margin: 0 20vh 0 20vh;
+	text-align: center;
+}
+
+.about {
+	grid-area: about;
+}
+
+.announcements {
+	grid-area: announcements;
+}
+.calendar {
+	grid-area: calendar;
+}
+.blog {
+	grid-area: blog;
+}
+.listsignup {
+	grid-area: listsignup;
+}
