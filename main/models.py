@@ -40,3 +40,13 @@ class BackgroundImage(models.Model):
 #        if About.objects.exists() and not self.pk:
 #            raise ValidationError('There can only be one background image, go back and edit the existing background image object')
 #        return super(About, self).save(*arggs, **kwargs)
+
+class Contact(models.Model):
+    name = models.CharField(max_length=256)
+    position = models.CharField(max_length=256)
+    phone = models.CharField(max_length=20)
+    email = models.CharField(max_length=256)
+
+class EmailSignupList(models.Model):
+    name = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)

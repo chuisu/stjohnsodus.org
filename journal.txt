@@ -33,3 +33,29 @@ The only trouble area here are the image models, which will require some reading
 Working on django models, have fleshed out a way to make only one instance possible, need to recreate this with images and find a way to serve static images.
 
 Still need a solution for the django calendar.
+
+4/26
+With last weeks work on views, static files, configuration, etc., the way I see it, only the following now need to be done.
+Figure out email list signup
+    this can be done with a form that adds to a model
+straighten out template files
+    reflect background and splash image in <head> under <style>, so as to work with django
+        make sure to adjust opacity in the style
+    create each granular page
+        create views and urls for each page
+    animate and prettify pages
+        pose.io
+        for diagonal lines around divs, think about right triangles glued to the top and bottom
+Setup python anywhere
+Document website usage
+
+Just as a sanity check, here are the things that Michael asked for:
+Info:
+    about, mission, contact info, announcements, events
+    service times, directions, mission statement, all prominent on front page
+Apps:
+    About, Calendar, Blog, Email list signup
+    About and Calendar should be prominent on the front page
+No logos, pictures, other media
+No deadline
+
