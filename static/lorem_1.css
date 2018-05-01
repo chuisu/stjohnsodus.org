@@ -2,6 +2,19 @@
 
 html {}
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	font-weight: 400;
+}
+
 body {
 	/* background-color: #e4f3f3; */
 	line-height: 40px;
@@ -26,11 +39,16 @@ h5 {
 	font-size: 16pt;
 }
 
+#backdrop {
+	margin: -2vh -0.42vw -2vh -0.42vw;
+        padding: 0;
+	background-size: cover;
+}
+
 #container {
 	margin: -2vh -0.42vw -2vh -0.42vw;
 	/* padding: 0 22px 0 22px; */
-	background-image: url('media/SIk9LkV.jpg');
-	background-size: cover;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #content-container {

@@ -6,12 +6,17 @@
     <title>St. John's Sodus</title>
     <link rel="stylesheet" href="{% static "lorem_1.css" %}" />
     <style>
+#backdrop {
+background-image: url('{{ backgroundimage.image.url }}');
+}
     </style>
   </head>
   <body>
+   <div id="backdrop">
    <div id="container">
      {% block content %}
      {% endblock content%}
+   </div>
    </div>
   </body>
 </html>
