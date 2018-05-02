@@ -9,6 +9,7 @@ from main.models import Event
 from main.models import BackgroundImage
 from main.models import SplashImage
 from main.models import Blog
+from main.models import Contact
 
 def index(request):
     #we need all imported things as variables
