@@ -17,7 +17,7 @@ def index(request):
     splashimage = SplashImage.objects.all().last()
     #next, the texts
     about = About.objects.all().last()
-    announcements = Announcement.objects.all()
+    announcements = Announcement.objects.all().order_by('-date')
     events = Event.objects.all()
     blog = Blog.objects.all()
     #render the page
@@ -29,4 +29,77 @@ def index(request):
         'events': events,
         'blog': blog,
         })
+
+def announcements(request):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    announcements = Announcement.objects.all().order_by('-date')
+    return render(request, 'main/announcements.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'announcements': announcements,
+    })
+
+def announcement_detail(request, id):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    try:
+        announcement = Announcement.objects.get(id=id)
+    except Announcement.DoesNotExist:
+        raise Http(404) ('This announcement does not exist')
+    return render(request, 'main/announcement_detail.html', {
+        'announcement': announcement,
+    })
+
+def calendar(request):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    events = Event.objects.all().order_by('-date')
+    return render(request, 'main/calendar.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'events': events,
+    })
+
+def calendar_detail(request, id):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    try:
+        event = Event.objects.get(id=id)
+    except Event.DoesNotExist:
+        raise Http(404) ('This event does not exist')
+    return render(request, 'main/calendar_detail.html', {
+        'event': event,
+    })
+
+def blog(request):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    blogentries = Blog.objects.all().order_by('-date')
+    return render(request, 'main/blog.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'blogentries': blogentries,
+    })
+
+def blog_detail(request, id):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    try:
+        blogentry = Blog.objects.get(id=id)
+    except Blog.DoesNotExist:
+        raise Http(404) ('This blog entry does not exist')
+    return render(request, 'main/blog_detail.html', {
+        'blogentry': blogentry,
+    })
+
+def contact(request):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    contact = Contact.objects.all()
+    return render(request, 'main/contact.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'contact': contact,
+    })
     
