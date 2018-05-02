@@ -98,14 +98,20 @@ nav ul li {
 }
 	
 .grid-container div {
-	padding: 0 6vh 0 6vh;
+	padding: 0 6vw 1vh 6vw;
 	margin: 0 3vh 0 3vh;
-	background-color: rgba(232, 235, 239, 0.5);
+	background-color: rgba(232, 235, 239, 0.7);
+	transform: skewY(3deg);
+}
+
+div.about p, div.about h3, div.grid-container p, div.grid-container h3, div.grid-container h5 {
+	transform: skewY(-3deg);
 }
 
 div.about {
 	margin: 0 20vh 0 20vh;
 	text-align: center;
+	transform: skewY(3deg);
 }
 
 .about {
