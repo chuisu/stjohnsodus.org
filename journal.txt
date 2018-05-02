@@ -59,3 +59,15 @@ Apps:
 No logos, pictures, other media
 No deadline
 
+5/2
+Getting some ideas about how I want the site to look and feel besides function. Want the title to slide and fade down, brief delay, then I want the about section to slide and fade up. Then, I want the grid below to slide and fade up when the page scrolls, and slide and fade down when the page is scrolled to the top.
+
+With the parallelogram divs, the navbar looks out of place. I need to figure out a way for it to look natural. A good way that I saw was to have transform: skewX on the items when hovered over with a black(?) background, so they look like parallelograms when they have focus. Another way could be to have skewed vertical dividing lines between each. The trouble is finding an X-oriented skew that works with the Y-oriented skew already on the divs that I have in the grid.
+
+We could also just throw away the skew.
+
+Food for thought. 
+
+Still need to fix forms for email signup, create each template for each view, and need to figure out making the items of the grid not align at the bottom, but align at the top (for example if the Announcements section is longer than the Events/Calendar section, the Events/Calendar div should not stretch to be as long as the Announcements).
+
+
