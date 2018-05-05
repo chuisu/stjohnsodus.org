@@ -70,4 +70,11 @@ Food for thought.
 
 Still need to fix forms for email signup, create each template for each view, and need to figure out making the items of the grid not align at the bottom, but align at the top (for example if the Announcements section is longer than the Events/Calendar section, the Events/Calendar div should not stretch to be as long as the Announcements).
 
+form
+	check valid email
+	.save ()
+	maybe make one giant list rather than multiple objects
+	if multiple objects, allow compiling to new list
+	make new emails easily discernable from old, already done
 
+We need a footer!

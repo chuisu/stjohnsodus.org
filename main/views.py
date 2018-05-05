@@ -10,6 +10,7 @@ from main.models import BackgroundImage
 from main.models import SplashImage
 from main.models import Blog
 from main.models import Contact
+from main.forms import EmailListSignupForm
 
 def index(request):
     #we need all imported things as variables
@@ -21,6 +22,12 @@ def index(request):
     announcements = Announcement.objects.all().order_by('-date')
     events = Event.objects.all()
     blog = Blog.objects.all()
+    form = EmailListSignupForm()
+    if request.method == 'POST':
+      form = EmailListSignupForm(request.POST)
+      if form.is_valid():
+        form.email = form.clean_email()
+        new_email = form.save()
     #render the page
     return render(request, 'main/index.html',{
         'backgroundimage': backgroundimage,
@@ -29,6 +36,7 @@ def index(request):
         'announcements': announcements,
         'events': events,
         'blog': blog,
+        'form': form,
         })
 
 def announcements(request):

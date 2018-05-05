@@ -35,7 +35,7 @@
         <ul>
           {% for event in events %}
           <li>
-            <h5><a href="{% url 'event_detail' event.id %}">{{ event.title }} &mdash; {{ event.date }}</a></h5>
+            <h5><a href="{% url 'calendar_detail' event.id %}">{{ event.title }} &mdash; {{ event.date }}</a></h5>
             <p>{{ event.description }}</p>
           </li>
           {% endfor %}
@@ -54,8 +54,18 @@
       </div>
       <div class="listsignup">
         <h3>EMAIL LIST SIGNUP</h3>
-        <p></p>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+          </form>
       </div>
     <footer></footer>
    </div>
+<script>
+var errors = document.getElementsByClassName("errorlist");
+for(i = 0; i < errors.length; i++){
+    alert(errors[i].innerText);
+}
+</script>
 {% endblock content %}

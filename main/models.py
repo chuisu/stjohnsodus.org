@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.http import HttpResponse
 
 class About(models.Model):
+    title = 'About'
     def save(self, *args, **kwargs):
         if About.objects.exists() and not self.pk:
             raise ValidationError('There can only be one About section, go back and edit the existing About object')
@@ -28,6 +29,7 @@ class Blog(models.Model):
     body = models.TextField()
 
 class SplashImage(models.Model):
+    title = 'Splash Image'
     image = models.ImageField(upload_to='static/media')
 #    def save(self, *args, **kwargs):
 #        if About.objects.exists() and not self.pk:
@@ -35,6 +37,7 @@ class SplashImage(models.Model):
 #        return super(About, self).save(*arggs, **kwargs)
 
 class BackgroundImage(models.Model):
+    title = 'Background Image'
     image = models.ImageField(upload_to='static/media')
 #    def save(self, *args, **kwargs):
 #        if About.objects.exists() and not self.pk:
@@ -47,6 +50,6 @@ class Contact(models.Model):
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=256)
 
-class EmailSignupList(models.Model):
+class EmailListSignup(models.Model):
     name = models.CharField(max_length=256)
-    email = models.CharField(max_length=256)
+    email = models.CharField(max_length=256, blank=True)

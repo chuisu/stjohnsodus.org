@@ -52,6 +52,7 @@ h5 {
 }
 
 #content-container {
+	display: flexbox;
 	margin: 0;
 	background-color: rgba(255, 255, 255, 0.4);
 }
@@ -90,28 +91,29 @@ nav ul li {
 	height: 100%;
 	display: grid;
 	grid-template-areas:
-		'about about about about about about'
-		'announcements announcements calendar calendar calendar calendar'
-		'blog blog blog listsignup listsignup listsignup';
-	grid-gap: 6vh;
-	padding: 0 6vw 0 6vw;
+		'about about'
+		'announcements calendar'
+		'blog listsignup';
+	grid-gap: 10vh;
+	padding: 0 10vw 0 10vw;
 }
 	
 .grid-container div {
 	padding: 0 6vw 1vh 6vw;
-	margin: 0 3vh 0 3vh;
+	margin: 0 3vh 3vh 3vh;
 	background-color: rgba(232, 235, 239, 0.7);
-	transform: skewY(3deg);
-}
-
-div.about p, div.about h3, div.grid-container p, div.grid-container h3, div.grid-container h5 {
-	transform: skewY(-3deg);
 }
 
 div.about {
-	margin: 0 20vh 0 20vh;
+	margin: 0 10vw 0 10vw;
+	padding-bottom: 3vh;
+	min-width: 20vw;
 	text-align: center;
-	transform: skewY(3deg);
+	transform: skewY(0deg);
+}
+
+div.about p, div.about h3 {
+	transform: skewY(0deg);
 }
 
 .about {
