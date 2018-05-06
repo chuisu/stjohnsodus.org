@@ -52,7 +52,6 @@ h5 {
 }
 
 #content-container {
-	display: flexbox;
 	margin: 0;
 	background-color: rgba(255, 255, 255, 0.4);
 }
@@ -93,7 +92,9 @@ nav ul li {
 	grid-template-areas:
 		'about about'
 		'announcements calendar'
-		'blog listsignup';
+		'announcements .'
+		'blog blog'
+		'listsignup listsignup';
 	grid-gap: 10vh;
 	padding: 0 10vw 0 10vw;
 }
@@ -126,9 +127,24 @@ div.about p, div.about h3 {
 .calendar {
 	grid-area: calendar;
 }
+
 .blog {
 	grid-area: blog;
 }
+
+div.blog {
+	margin: 0 10vw 0 10vw;
+}
+
+div.blog h3 {
+	text-align: center;
+}
+
 .listsignup {
 	grid-area: listsignup;
+}
+
+div.listsignup {
+        text-align: center;
+        margin: 0 10vw 0 10vw;
 }
