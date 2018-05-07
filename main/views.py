@@ -60,6 +60,12 @@ def announcement_detail(request, id):
         'announcement': announcement,
     })
 
+# -- LET'S MAKE A CALENDAR -- #
+# check what day the month starts on
+# for each day in the month, create a table cell.
+# if any day of the week before 1st of month, create a blank cell
+# if sunday, start new row
+# if an event exists on that day, list the event
 def calendar(request):
     backgroundimage = BackgroundImage.objects.all().last()
     splashimage = SplashImage.objects.all().last()
