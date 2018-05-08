@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700|Cormorant+Unicase:700');
 
 html {}
 
@@ -20,23 +20,22 @@ body {
 	line-height: 40px;
 }
 
-p, li, h5 {
+p, li {
 	font-family: 'Muli', sans-serif;
 	font-size: 12pt;
 }
 
-h1, h3 {
-	font-family: 'Fira Sans', sans-serif;
-	font-weight: 400;
-}
-
 h3 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
 	font-size: 20pt;
+	letter-spacing: 2px;
 }
 
-h5 {
-	font-weight: thin;
-	font-size: 16pt;
+h5, h5 a, h5 a:visited {
+	font-family: 'Muli', sans-serif;
+	font-weight: 600;
+	font-size: 12pt;
 }
 
 #backdrop {
@@ -63,17 +62,22 @@ h5 {
 
 h1#site-title {
 	display: inline-block;
-	margin: auto 0 0 2vw;
+	margin: auto 0 2vh 10vw;
+	font-family: 'Cormorant Unicase', serif;
 	font-size: 8vh;
-	font-weight: 200;
 	letter-spacing: 0.2vw;
-	color: #666;
+	color: white;
+	text-shadow:
+		-1px -1px 0 #666,
+		1px -1px 0 #666,
+		-1px 1px 0 #666,
+		1px 1px 0 #666;
 }
 
 nav {
 	text-align: right;
-	margin: 0 0 6.25vh 0;
-	padding: 0.0001vh 0 0 0;
+	margin: 0 0 3vh 0;
+	padding: 0.0001vh 10vw 0 0;
 	background-color: rgba(222, 225, 229, 0.5);
 }
 
@@ -83,38 +87,48 @@ ul {
 }
 
 nav ul li {
-	margin: 0 1% 0 1%;
 	display: inline;
+	margin: 0 0 0 1vw;
 }
+
+nav ul li a, nav ul li a:visited  {
+	color: #666;
+}
+
+nav ul li a:hover {
+	color: black;
+}
+
 .grid-container {
 	height: 100%;
 	display: grid;
 	grid-template-areas:
 		'about about'
 		'announcements calendar'
-		'announcements .'
 		'blog blog'
 		'listsignup listsignup';
-	grid-gap: 10vh;
-	padding: 0 10vw 0 10vw;
+	margin: 0 10vw 0 10vw;
 }
 	
 .grid-container div {
-	padding: 0 6vw 1vh 6vw;
-	margin: 0 3vh 3vh 3vh;
-	background-color: rgba(232, 235, 239, 0.7);
+	padding: 0 3vw 3vh 3vw;
+	margin: 0 0 3vh 0;
+	background-color: rgba(232, 235, 239, 0.5);
+	border-color: #a3a3a3;
+	border-style: none solid none solid;
+	border-width: 1px;
 }
 
 div.about {
-	margin: 0 10vw 0 10vw;
-	padding-bottom: 3vh;
+/*	margin: 0 7vw 10vh 7vw;
+	padding: 0 7vw 0 7vw;
 	min-width: 20vw;
-	text-align: center;
-	transform: skewY(0deg);
+*/	text-align: center;
+	border-bottom-style: solid;
+	margin: 0;
 }
 
 div.about p, div.about h3 {
-	transform: skewY(0deg);
 }
 
 .about {
@@ -124,16 +138,18 @@ div.about p, div.about h3 {
 .announcements {
 	grid-area: announcements;
 }
+
+div.announcements {
+}
+
 .calendar {
 	grid-area: calendar;
 }
 
+div.calendar {
+}
 .blog {
 	grid-area: blog;
-}
-
-div.blog {
-	margin: 0 10vw 0 10vw;
 }
 
 div.blog h3 {
@@ -146,5 +162,4 @@ div.blog h3 {
 
 div.listsignup {
         text-align: center;
-        margin: 0 10vw 0 10vw;
 }
