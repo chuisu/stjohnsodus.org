@@ -9,11 +9,11 @@
     <nav>
       <ul>
         <li><a href="/blog/">BLOG</a></li>
-        <li>|</li>
+        <li class="separator">|</li>
         <li><a href="/calendar/">CALENDAR</a></li>
-        <li>|</li>
+        <li class="separator">|</li>
         <li><a href="/announcements/">ANNOUNCEMENTS</a></li>
-        <li>|</li>
+        <li class="separator">|</li>
         <li><a href="/contact/">CONTACT</a></li>
       </ul>
     </nav>
@@ -27,7 +27,7 @@
         <ul>
           {% for announcement in announcements %}
           <li>
-            <h5><a href="{% url 'announcement_detail' announcement.id %}">{{ announcement.title }} &mdash; {{ announcement.date }}</a></h5>
+            <h5><a href="{% url 'announcement_detail' announcement.id %}">{{ announcement.title }}<span class="separator"> &mdash; </span>{{ announcement.date }}</a></h5>
             <p>{{ announcement.body }}</p>
           </li>
           {% endfor %}
@@ -38,7 +38,7 @@
         <ul>
           {% for event in events %}
           <li>
-            <h5><a href="{% url 'calendar_detail' event.id %}">{{ event.title }} &mdash; {{ event.date }}</a></h5>
+            <h5><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}<span class="separator"> &mdash; </span>{{ event.date }}</a></h5>
             <p>{{ event.description }}</p>
           </li>
           {% endfor %}
@@ -49,8 +49,8 @@
         <ul>
           {% for blogentry in blog %}
           <li>
-            <h5><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }} &mdash; {{ blogentry.date }}</a></h5>
-            <p>{{ blogentry.body }}</p>
+            <h5><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }}<span class="separator"> &mdash; </span>{{ blogentry.date }}</a></h5>
+            <p>{{ blogentry.body|linebreaks }}</p>
           </li>
           {% endfor %}
         </ul>
@@ -60,7 +60,7 @@
           <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Submit</button>
+            <button type="submit">SUBMIT</button>
           </form>
       </div>
     <footer></footer>
