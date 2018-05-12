@@ -60,15 +60,15 @@
           <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">SUBMIT</button>
+            <button type="submit">&rarr;</button>
           </form>
       </div>
     <footer></footer>
    </div>
 <script>
-var errors = document.getElementsByClassName("errorlist");
-for(i = 0; i < errors.length; i++){
-    alert(errors[i].innerText);
-}
-</script>
-{% endblock content %}
+	var errors = document.getElementsByClassName("errorlist");
+	for(i = 0; i < errors.length; i++){
+	    alert(errors[i].innerText);
+	}
+	</script>
+	{% endblock content %}

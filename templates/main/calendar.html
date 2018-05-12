@@ -1,5 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ calendar }}
+
+Calendar
+month = current month
+days = days in month
+weekdays = number between 0 and 6
+event = event in events
+
+<table>
+<tr>
+{% for days in month %}
+    {% for weekday in weekdays %}
+    {% if weekday < days[0].weekday %}
+        <td>blank</td>
+    {% endif %}
+    {% endfor %}
+    {% start the real loop if we can %}
+    	<td>
+        {{ days.day }}
+        </br>
+        {% if event.date == days.date %}
+        {{ event.title }}
+        {% endif %}
+        </td>
+        {% if days.weekday == Saturday %}
+        </tr>
+        <tr>
+        {% endif %}
+{% endfor %}
+{% endwith %}
+</tr>
+</table>
 {% endblock content%}
