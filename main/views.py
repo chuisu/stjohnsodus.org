@@ -11,6 +11,8 @@ from main.models import SplashImage
 from main.models import Blog
 from main.models import Contact
 from main.forms import EmailListSignupForm
+import datetime
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 def index(request):
     #we need all imported things as variables
@@ -70,7 +72,7 @@ def announcement_detail(request, id):
 def calendar(request):
     backgroundimage = BackgroundImage.objects.all().last()
     splashimage = SplashImage.objects.all().last()
-    events = Event.objects.all().order_by('-date')
+    events = Event.objects.all().order_by('-date')	
     return render(request, 'main/calendar.html', {
         'backgroundimage': backgroundimage,
         'splashimage': splashimage,
