@@ -58,6 +58,7 @@ def announcement_detail(request, id):
         raise Http(404) ('This announcement does not exist')
     return render(request, 'main/announcement_detail.html', {
         'announcement': announcement,
+        'backgroundimage': backgroundimage,
     })
 
 # -- LET'S MAKE A CALENDAR -- #
@@ -85,6 +86,7 @@ def calendar_detail(request, id):
         raise Http(404) ('This event does not exist')
     return render(request, 'main/calendar_detail.html', {
         'event': event,
+        'backgroundimage': backgroundimage,
     })
 
 def blog(request):
@@ -106,6 +108,7 @@ def blog_detail(request, id):
         raise Http(404) ('This blog entry does not exist')
     return render(request, 'main/blog_detail.html', {
         'blogentry': blogentry,
+        'backgroundimage': backgroundimage,
     })
 
 def contact(request):

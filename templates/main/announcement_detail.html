@@ -1,0 +1,9 @@
+{% extends "base_secondary.html" %}
+
+{% block content  %}
+<div class="reading-view">
+<h5>{{ announcement.date }} &mdash; {{ announcement.title }}</h5>
+{{ announcement.body|linebreaks }}
+<a href="/announcements" class="separator">back</a>
+</div>
+{% endblock content %}

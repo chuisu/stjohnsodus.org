@@ -1,0 +1,9 @@
+{% extends "base_secondary.html" %}
+
+{% block content  %}
+<div class="reading-view">
+<h5>{{ blogentry.title }} &emdash; {{ blogentry.date }}</h5>
+<p>{{ blogentry.body|linebreaks }}</p>
+<a href="/blog" class="separator">back</a>
+</div>
+{% endblock content %}

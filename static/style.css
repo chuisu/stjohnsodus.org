@@ -142,7 +142,7 @@ div.about {
 div.about p, div.about h3 {
 }
 
-div.about {
+div.about{
 }
 
 .about {
@@ -161,6 +161,7 @@ div.announcements {
 }
 
 div.calendar {
+	border-style: none solid none none;
 }
 .blog {
 	grid-area: blog;

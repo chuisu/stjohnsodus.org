@@ -1,0 +1,11 @@
+{% extends "base_secondary.html" %}
+
+{% block content  %}
+<h3>BLOG</h3>
+<ul>
+{% for blogentry in blogentries %}
+<li><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.date }} <span class="separator">&mdash;</span> {{ blogentry.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

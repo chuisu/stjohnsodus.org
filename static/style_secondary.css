@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Crimson+Text|Fira+Sans:100,400|Muli|Nunito|Playfair+Display:400,700|Cormorant+Unicase:700');
+
+html {}
+
+a, a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	color: #fff !important;
+	text-shadow:
+		-1px -1px 0 #ff9872,
+		1px -1px 0 #ff9872,
+		-1px 1px 0 #ff9872,
+		1px 1px 0 #ff9872;
+}
+
+body {
+	/* background-color: #e4f3f3; */
+	line-height: 40px;
+}
+
+p, li, button, a {
+	font-family: 'Muli', sans-serif;
+	font-size: 12pt;
+}
+
+h3 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+	font-size: 20pt;
+	letter-spacing: 2px;
+	margin: 0;
+}
+
+h5, h5 a, h5 a:visited, h5 a:hover {
+	font-family: 'Muli', sans-serif;
+	font-weight: 600;
+	font-size: 12pt;
+	margin: 0;
+}
+
+#backdrop {
+	margin: -22px -8px -22px -8px;
+        padding: 0;
+	background-size: cover;
+	height: 100%;
+	min-height: 90vh;
+}
+
+#container {
+	position: relative;
+	margin: 0;
+	padding: 0 0 10vh 0;
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 100%;
+	min-height: 90vh;
+}
+
+#content-container {
+        margin: 5vh 15vw 5vh 15vw;
+	padding: 5vh 5vw 5vh 5vw;
+	background-color: rgba(255, 255, 255, 0.4);
+	min-height: 66vh;
+	border-color: #a3a3a3;
+	border-width: 1px;
+	border-style: none solid;
+}
+
+h1#site-title {
+	position: absolute;
+	top: -15px;
+	left: 15vw;
+	font-family: 'Cormorant Unicase', serif;
+	font-size: 16pt;
+	letter-spacing: 0.2vw;
+	color: white;
+	text-shadow:
+		-1px -1px 0 #666,
+		1px -1px 0 #666,
+		-1px 1px 0 #666,
+		1px 1px 0 #666;
+}
+
+#site-title a, #site-title a:visited {
+	font-family: 'Cormorant Unicase', serif;
+	color: white;
+}
+
+nav {
+	text-align: right;
+	margin: 0;
+	padding: 0 15vw 0 0;
+	background-color: rgba(222, 225, 229, 0.5);
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 0 0 1vw;
+}
+
+.separator, a.separator, a.separator:visited {
+	color: #ff9872;
+}
+
+.reading-view {
+	padding: 5vh 5vw;
+	margin: -5vh 0 0 0;
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	height: 66px;
+	width: 100%;
+	/* padding: 0 22px 0 22px; */
+	background-color: rgba(255, 255, 255, 0.3);
+}

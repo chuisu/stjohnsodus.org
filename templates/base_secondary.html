@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <title>St. John's Sodus</title>
+    <link rel="stylesheet" href="{% static "style_secondary.css" %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+#backdrop {
+background-image: url('{{ backgroundimage.image.url }}');
+}
+    </style>
+  </head>
+  <body>
+   <div id="backdrop">
+    <div id="container">
+     <nav>
+      <h1 id="site-title"><a href="/">ST JOHN'S SODUS</a></h1>
+      <ul>
+        <li><a href="/blog/">BLOG</a></li>
+        <li class="separator">|</li>
+        <li><a href="/calendar/">CALENDAR</a></li>
+        <li class="separator">|</li>
+        <li><a href="/announcements/">ANNOUNCEMENTS</a></li>
+        <li class="separator">|</li>
+        <li><a href="/contact/">CONTACT</a></li>
+      </ul>
+     </nav>
+     <div id="content-container">
+     {% block content %}
+     {% endblock content%}
+     </div>
+     <footer>
+     </footer>
+    </div>
+   </div>
+  </body>
+</html>

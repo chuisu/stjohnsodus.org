@@ -25,7 +25,7 @@
       <div class="announcements">
         <h3><a href="/announcements/">ANNOUNCEMENTS</a></h3>
         <ul>
-          {% for announcement in announcements %}
+          {% for announcement in announcements|slice:":3" %}
           <li>
             <h5><a href="{% url 'announcement_detail' announcement.id %}">{{ announcement.title }}<span class="separator"> &mdash; </span>{{ announcement.date }}</a></h5>
             <p>{{ announcement.body }}</p>
@@ -36,7 +36,7 @@
       <div class="calendar">
         <h3><a href="/calendar/">EVENTS</a></h3>
         <ul>
-          {% for event in events %}
+          {% for event in events|slice:":5" %}
           <li>
             <h5><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}<span class="separator"> &mdash; </span>{{ event.date }}</a></h5>
             <p>{{ event.description }}</p>
@@ -47,7 +47,7 @@
       <div class="blog">
         <h3><a href="/blog/">BLOG</a></h3>
         <ul>
-          {% for blogentry in blog %}
+          {% for blogentry in blog|slice:":1" %}
           <li>
             <h5><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }}<span class="separator"> &mdash; </span>{{ blogentry.date }}</a></h5>
             <p>{{ blogentry.body|linebreaks }}</p>
@@ -70,5 +70,5 @@
 	for(i = 0; i < errors.length; i++){
 	    alert(errors[i].innerText);
 	}
-	</script>
-	{% endblock content %}
+</script>
+{% endblock content %}

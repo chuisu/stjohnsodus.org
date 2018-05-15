@@ -1,0 +1,13 @@
+{% extends "base_secondary.html" %}
+
+{% block content  %}
+<h3>CONTACT US</h3>
+{% for contact in contact %}
+<ul>
+<li><h5>{{ contact.name }}</h5></li>
+<li>{{ contact.position }}</li>
+<li>{{ contact.phone }}</li>
+<li>{{ contact.email }}</li>
+</ul>
+{% endfor %}
+{% endblock content %}
