@@ -1,0 +1,10 @@
+{% extends "base_secondary.html" %}
+
+{% block content %}
+<div class="reading-view">
+<h3>{{ event.date }}</h3>
+ <h3>{{ event.title }}</h3>
+{{ event.description|linebreaks }}
+<a href="/calendar" class="separator">back</a>
+</div>
+{% endblock content %}

@@ -3,17 +3,32 @@
 {% block content %}
 <!-- another idea -->
 <!-- array (month) of arrays (weeks), whose innards are days. -->
+<h3 id="monthname">{{ monthname }}</h3>
 <table>
+    <tr class="column-label-row">
+        <td class="column-label">Sun</td>
+        <td class="column-label">Mon</td>
+        <td class="column-label">Tue</td>
+        <td class="column-label">Wed</td>
+        <td class="column-label">Thu</td>
+        <td class="column-label">Fri</td>
+        <td class="column-label">Sat</td>
+    </tr>
 {% for week in rendercalendar %}
     <tr>
     {% for day in week %}
-        <td>{{ day }}
-        {% for event in events %}
-        {% if event.date.month == month and event.date.day == day %}
-           {{ events.title }}
+        {% if day == 0 %}
+            <td></td>
         {% endif %}
-        {% endfor %}
+        {% if day != 0 %}
+            <td>{{ day }}
+            {% for event in events %}
+            {% if event.date.month == month and event.date.day == day %}
+                </br><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}</a>
+            {% endif %}
+            {% endfor %}
         </td>
+        {% endif %}
     {% endfor %}
     </tr>
 {% endfor %}

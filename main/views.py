@@ -12,7 +12,7 @@ from main.models import Blog
 from main.models import Contact
 from main.forms import EmailListSignupForm
 import datetime, calendar
-from calendar import monthcalendar
+from calendar import monthcalendar, month_name
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 calendar.setfirstweekday(calendar.SUNDAY)
@@ -66,14 +66,9 @@ def announcement_detail(request, id):
         'backgroundimage': backgroundimage,
     })
 
-# -- LET'S MAKE A CALENDAR -- #
-# check what day the month starts on
-# for each day in the month, create a table cell.
-# if any day of the week before 1st of month, create a blank cell
-# if sunday, start new row
-# if an event exists on that day, list the event
 def calendar(request):
     month = datetime.datetime.today().month
+    monthname = month_name[month]
     year = datetime.datetime.today().year
     rendercalendar = monthcalendar(year, month)
     backgroundimage = BackgroundImage.objects.all().last()
@@ -85,6 +80,7 @@ def calendar(request):
         'events': events,
         'rendercalendar': rendercalendar,
         'month': month,
+        'monthname': monthname,
     })
 
 def calendar_detail(request, id):
