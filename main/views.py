@@ -11,8 +11,10 @@ from main.models import SplashImage
 from main.models import Blog
 from main.models import Contact
 from main.forms import EmailListSignupForm
-import datetime
+import datetime, calendar
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
+calendar.setfirstweekday(calendar.SUNDAY)
 
 def index(request):
     #we need all imported things as variables
@@ -70,6 +72,9 @@ def announcement_detail(request, id):
 # if sunday, start new row
 # if an event exists on that day, list the event
 def calendar(request):
+    month = datetime.datetime.today().month
+    year = datetime.datetime.today().year
+    rendercalendar = calendar.monthcalendar(year, month)
     backgroundimage = BackgroundImage.objects.all().last()
     splashimage = SplashImage.objects.all().last()
     events = Event.objects.all().order_by('-date')	
@@ -77,6 +82,8 @@ def calendar(request):
         'backgroundimage': backgroundimage,
         'splashimage': splashimage,
         'events': events,
+        'rendercalendar': rendercalendar,
+        'month': month,
     })
 
 def calendar_detail(request, id):

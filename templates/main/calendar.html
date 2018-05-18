@@ -1,35 +1,22 @@
 {% extends "base_secondary.html" %}
 
 {% block content %}
-
-Calendar
-month = current month
-days = days in month
-weekdays = number between 0 and 6
-event = event in events
-
+<!-- another idea -->
+<!-- array (month) of arrays (weeks), whose innards are days. -->
 <table>
-<tr>
-{% for days in month %}
-    {% for weekday in weekdays %}
-    {% if weekday < days[0].weekday %}
-        <td>blank</td>
-    {% endif %}
-    {% endfor %}
-    {% start the real loop if we can %}
-    	<td>
-        {{ days.day }}
-        </br>
-        {% if event.date == days.date %}
-        {{ event.title }}
+{% for week in rendercalendar %}
+    <tr>
+    {% for day in week %}
+        <td>
+        {% for event in events %}
+        {% if event.date.month == month and event.date.day == day %}
+           {{ events.title }}
         {% endif %}
+        {% endfor %}
         </td>
-        {% if days.weekday == Saturday %}
-        </tr>
-        <tr>
-        {% endif %}
+    {% endfor %}
+    </tr>
 {% endfor %}
-{% endwith %}
-</tr>
 </table>
+    
 {% endblock content%}
