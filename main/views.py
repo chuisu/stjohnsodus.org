@@ -12,6 +12,7 @@ from main.models import Blog
 from main.models import Contact
 from main.forms import EmailListSignupForm
 import datetime, calendar
+from calendar import monthcalendar
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 calendar.setfirstweekday(calendar.SUNDAY)
@@ -74,10 +75,10 @@ def announcement_detail(request, id):
 def calendar(request):
     month = datetime.datetime.today().month
     year = datetime.datetime.today().year
-    rendercalendar = calendar.monthcalendar(year, month)
+    rendercalendar = monthcalendar(year, month)
     backgroundimage = BackgroundImage.objects.all().last()
     splashimage = SplashImage.objects.all().last()
-    events = Event.objects.all().order_by('-date')	
+    events = Event.objects.all()
     return render(request, 'main/calendar.html', {
         'backgroundimage': backgroundimage,
         'splashimage': splashimage,

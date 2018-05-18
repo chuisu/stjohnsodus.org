@@ -7,7 +7,7 @@
 {% for week in rendercalendar %}
     <tr>
     {% for day in week %}
-        <td>
+        <td>{{ day }}
         {% for event in events %}
         {% if event.date.month == month and event.date.day == day %}
            {{ events.title }}
