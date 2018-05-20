@@ -80,6 +80,25 @@ def calendar(request):
         'events': events,
         'rendercalendar': rendercalendar,
         'month': month,
+        'year': year,
+        'monthname': monthname,
+    })
+
+def calendar_month(request, yearrequest, monthrequest):
+    month = int(monthrequest)
+    monthname = month_name[month]
+    year = int(yearrequest)
+    rendercalendar = monthcalendar(year, month)
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    events = Event.objects.all()
+    return render(request, 'main/calendar.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'events': events,
+        'rendercalendar': rendercalendar,
+        'month': month,
+        'year': year,
         'monthname': monthname,
     })
 

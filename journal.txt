@@ -78,3 +78,6 @@ form
 	make new emails easily discernable from old, already done
 
 We need a footer!
+
+5/20
+Calendar has been finished in its initial functionality, but we need to "paginate" it in that we need to be able to navigate to different months and see what different events were there. We may be able to do this by having a different view/URL combo that works kind of like _detail pages.

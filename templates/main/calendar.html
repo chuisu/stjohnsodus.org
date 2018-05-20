@@ -4,6 +4,25 @@
 <!-- another idea -->
 <!-- array (month) of arrays (weeks), whose innards are days. -->
 <h3 id="monthname">{{ monthname }}</h3>
+{% if month == 1 %}
+    {% with yearrequest=year|add:"-1" monthrequest=12 %}
+    <a href="{% url 'calendar_month' yearrequest monthrequest %}" class="previous-button">previous</a>
+    {% endwith %}
+{% else %}
+    {% with yearrequest=year monthrequest=month|add:"-1" %}
+    <a href="{% url 'calendar_month' yearrequest monthrequest %}" class="previous-button">previous</a>
+    {% endwith %}
+{% endif %}
+{% if month == 12 %}
+    {% with yearrequest=year|add:"1" monthrequest=1 %}
+    <a href="{% url 'calendar_month' yearrequest monthrequest %}" class="next-button">next</a>
+    {% endwith %}
+{% else %}
+    {% with yearrequest=year monthrequest=month|add:"1" %}
+    <a href="{% url 'calendar_month' yearrequest monthrequest %}" class="next-button">next</a>
+    {% endwith %}
+{% endif %}
+
 <table>
     <tr class="column-label-row">
         <td class="column-label">Sun</td>
@@ -23,7 +42,7 @@
         {% if day != 0 %}
             <td>{{ day }}
             {% for event in events %}
-            {% if event.date.month == month and event.date.day == day %}
+            {% if event.date.month == month and event.date.day == day and event.date.year == year %}
                 </br><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}</a>
             {% endif %}
             {% endfor %}

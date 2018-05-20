@@ -125,6 +125,7 @@ footer {
 
 #monthname {
 	margin: 0 0 2.5vh 0;
+	text-align: center;
 }
 
 table {
@@ -161,3 +162,10 @@ tr.column-label-row {
 	height: 60px;
 }
 
+a.previous-button {
+	float: left;
+}
+
+a.next-button {
+	float: right;
+}
