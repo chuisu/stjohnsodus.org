@@ -26,7 +26,7 @@ def index(request):
     about = About.objects.all().last()
     announcements = Announcement.objects.all().order_by('-date')
     events = Event.objects.all()
-    blog = Blog.objects.all()
+    blog = Blog.objects.all().order_by('-date')
     form = EmailListSignupForm()
     if request.method == 'POST':
       form = EmailListSignupForm(request.POST)

@@ -41,11 +41,13 @@
         {% endif %}
         {% if day != 0 %}
             <td>{{ day }}
+                <ul>
             {% for event in events %}
             {% if event.date.month == month and event.date.day == day and event.date.year == year %}
-                </br><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}</a>
+                <li><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}</a></li>
             {% endif %}
             {% endfor %}
+                </ul>
         </td>
         {% endif %}
     {% endfor %}

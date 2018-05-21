@@ -1,10 +1,18 @@
 {% extends "base_secondary.html" %}
 
 {% block content  %}
-<h3>BLOG</h3>
-<ul>
+<h3 class="blog">BLOG</h3>
+<ul class="blog">
 {% for blogentry in blogentries %}
-<li><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.date }} <span class="separator">&mdash;</span> {{ blogentry.title }}</a></li>
+{% if forloop.counter == 1 %}
+<hr>
+<h5 class="blog"><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }}</a></h5>
+<p class="blog-date">{{ blogentry.date }}</p>
+<p class="blog">{{ blogentry.body|linebreaks }}</p>
+<hr>
+{% elif forloop.counter > 1 %}
+<li><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }} <span class="separator">&mdash;</span> {{ blogentry.date }}</a></li>
+{% endif %}
 {% endfor %}
 </ul>
 
