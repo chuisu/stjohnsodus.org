@@ -81,3 +81,9 @@ We need a footer!
 
 5/20
 Calendar has been finished in its initial functionality, but we need to "paginate" it in that we need to be able to navigate to different months and see what different events were there. We may be able to do this by having a different view/URL combo that works kind of like _detail pages.
+
+5/22
+Blog page can work with pagination in such a way that we can slice one of, say, five blog posts to highlight on the blog page, then we can see the next four as links, then there is a link for "see all." The "see all" link will bring us to a paginated list of blog entries.
+
+We should work on pagination of announcements first, since this will work like the secondary page of the blog.
+

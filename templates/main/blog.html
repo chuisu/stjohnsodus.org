@@ -3,7 +3,7 @@
 {% block content  %}
 <h3 class="blog">BLOG</h3>
 <ul class="blog">
-{% for blogentry in blogentries %}
+{% for blogentry in blogentries|slice:":6" %}
 {% if forloop.counter == 1 %}
 <hr>
 <h5 class="blog"><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.title }}</a></h5>
@@ -15,5 +15,5 @@
 {% endif %}
 {% endfor %}
 </ul>
-
+<a href="/blog/entries" class="separator">see all</a>
 {% endblock content %}

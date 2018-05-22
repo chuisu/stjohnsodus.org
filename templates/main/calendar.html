@@ -44,7 +44,7 @@
                 <ul>
             {% for event in events %}
             {% if event.date.month == month and event.date.day == day and event.date.year == year %}
-                <li><a href="{% url 'calendar_detail' event.id %}">{{ event.title }}</a></li>
+                <li><a href="{% url 'calendar_detail' event.id %}">{{ event.date|date:"fA" }} {{ event.title }}</a></li>
             {% endif %}
             {% endfor %}
                 </ul>

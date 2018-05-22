@@ -7,4 +7,20 @@
 <li><a href="{% url 'announcement_detail' announcement.id %}">{{ announcement.date }} <span class="separator">&mdash;</span> {{ announcement.title }}</a></li>
 {% endfor %}
 </ul>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if announcements.has_previous %}
+            <a href="?page={{ announcements.previous_page_number }}" id="pagination-previous-link" class="separator">previous</a>
+        {% endif %}
+    
+        <span class="current">
+            Page {{ announcements.number }} of {{ announcements.paginator.num_pages }}
+        </span>
+        
+        {% if announcements.has_next %}
+            <a href="?page={{ announcements.next_page_number }}" id="pagination-next-link" class="separator">next</a>
+        {% endif %}
+    </span>
+</div>
 {% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "base_secondary.html" %}
+
+{% block content  %}
+<h3 class="blog"><a href="/blog/">BLOG ENTRIES</a></h3>
+<a href="/blog/" class="separator">back to main blog</a>
+<ul class="blog">
+{% for blogentry in blogentries %}
+<li><a href="{% url 'blog_detail' blogentry.id %}">{{ blogentry.date }} <span class="separator">&mdash;</span> {{ blogentry.title }}</a></li>
+{% endfor %}
+</ul>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if blogentries.has_previous %}
+            <a href="?page={{ blogentries.previous_page_number }}" id="pagination-previous-link" class="separator">previous</a>
+        {% endif %}
+    
+        <span class="current">
+            Page {{ blogentries.number }} of {{ blogentries.paginator.num_pages }}
+        </span>
+        
+        {% if blogentries.has_next %}
+            <a href="?page={{ blogentries.next_page_number }}" id="pagination-next-link" class="separator">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock content %}

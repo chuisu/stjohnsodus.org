@@ -13,7 +13,7 @@ from main.models import Contact
 from main.forms import EmailListSignupForm
 import datetime, calendar
 from calendar import monthcalendar, month_name
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator 
 
 calendar.setfirstweekday(calendar.SUNDAY)
 
@@ -47,7 +47,15 @@ def index(request):
 def announcements(request):
     backgroundimage = BackgroundImage.objects.all().last()
     splashimage = SplashImage.objects.all().last()
-    announcements = Announcement.objects.all().order_by('-date')
+    announcement_list = Announcement.objects.all().order_by('-date')
+    paginator = Paginator(announcement_list, 15)
+    page = request.GET.get('page')
+    try:
+        announcements = paginator.page(page)
+    except PageNotAnInteger:
+        announcements = paginator.page(1)
+    except EmpyPage:
+        announcements = paginator.page(paginator.num_pages)
     return render(request, 'main/announcements.html', {
         'backgroundimage': backgroundimage,
         'splashimage': splashimage,
@@ -119,6 +127,24 @@ def blog(request):
     splashimage = SplashImage.objects.all().last()
     blogentries = Blog.objects.all().order_by('-date')
     return render(request, 'main/blog.html', {
+        'backgroundimage': backgroundimage,
+        'splashimage': splashimage,
+        'blogentries': blogentries,
+    })
+
+def blog_secondary(request):
+    backgroundimage = BackgroundImage.objects.all().last()
+    splashimage = SplashImage.objects.all().last()
+    blogentry_list = Blog.objects.all().order_by('-date')
+    paginator = Paginator(blogentry_list, 15)
+    page = request.GET.get('page')
+    try:
+        blogentries = paginator.page(page)
+    except PageNotAnInteger:
+        blogentries = paginator.page(1)
+    except EmptyPage:
+        blogentries = paginator.page(paginator.num_pages)
+    return render(request, 'main/blog_secondary.html', {
         'backgroundimage': backgroundimage,
         'splashimage': splashimage,
         'blogentries': blogentries,

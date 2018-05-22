@@ -12,7 +12,7 @@ a:visited {
 }
 
 a:hover {
-	color: white;
+	color: white!important;
 	text-shadow:
 		-1px -1px 0 #ff9872,
 		1px -1px 0 #ff9872,
@@ -26,12 +26,12 @@ body {
 	line-height: 40px;
 }
 
-p, li, button {
+p, li, button, a {
 	font-family: 'Muli', sans-serif;
 	font-size: 12pt;
 }
 
-h3 {
+h3, h3 a, h3 a:visited {
 	font-family: 'Playfair Display', serif;
 	font-weight: 400;
 	font-size: 20pt;
@@ -107,9 +107,10 @@ nav ul li a, nav ul li a:visited  {
 nav ul li a:hover {
 }
 
-.separator {
+.separator, a.separator:visited {
 	color: #ff9872;
 }
+
 .grid-container {
 	height: 100%;
 	display: grid;

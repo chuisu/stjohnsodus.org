@@ -21,12 +21,12 @@ body {
 	line-height: 40px;
 }
 
-p, li, button, a {
+p, li, button, a, span {
 	font-family: 'Muli', sans-serif;
 	font-size: 12pt;
 }
 
-h3 {
+h3, h3 a, h3 a:visited {
 	font-family: 'Playfair Display', serif;
 	font-weight: 400;
 	font-size: 20pt;
@@ -164,7 +164,8 @@ td ul {
 }
 
 td ul li a, td ul li {
-	font-size: 8pt;
+	font-size: 9pt;
+	line-height: 14px;
 }
 
 tr.column-label-row {
@@ -191,4 +192,14 @@ h5.blog {
 	text-align: center;
 }
 
+div.pagination {
+	text-align: center;
+}
 
+#pagination-previous-link {
+	float: left;
+}
+
+#pagination-next-link {
+	float: right;
+}
