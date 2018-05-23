@@ -23,11 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7x3p%j4j8#txoj(3u&1e)=*rmx80an4hxh*u^4#jw3jp__zdk$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'stjohnsodus.org',
+    'stjohnsodus.pythonanywhere.com',
+
 ]
 
 
