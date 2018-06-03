@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'www.stjohnsodus.org',
     'stjohnsodus.org',
     'stjohnsodus.pythonanywhere.com',
 
