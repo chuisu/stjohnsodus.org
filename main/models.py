@@ -7,10 +7,10 @@ from django.http import HttpResponse
 
 class About(models.Model):
     title = 'About'
-    def save(self, *args, **kwargs):
-        if About.objects.exists() and not self.pk:
-            raise ValidationError('There can only be one About section, go back and edit the existing About object')
-        return super(About, self).save(*arggs, **kwargs)
+    # def save(self, *args, **kwargs):
+    #    if About.objects.exists() and not self.pk:
+    #        raise ValidationError('There can only be one About section, go back and edit the existing About object')
+    #    return super(About, self).save(*arggs, **kwargs)
     body = models.TextField(help_text = "This is the About Section that appears on the front page. This can be edited to reflect the church's mission, information about the church, and service times.")
     class Meta:
         verbose_name = "About Section"
